@@ -23,7 +23,7 @@ service "elasticsearch" do
   action [:enable, :start]
 end
 
-execute "plugin install kopf" do
+execute "plugin install analysis-kuromoji" do
   command "sudo /usr/share/elasticsearch/bin/plugin install analysis-kuromoji"
   not_if "test -e /usr/share/elasticsearch/plugins/analysis-kuromoji"
 end
