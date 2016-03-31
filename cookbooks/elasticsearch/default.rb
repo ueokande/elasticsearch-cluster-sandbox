@@ -25,10 +25,12 @@ end
 
 execute "plugin install analysis-kuromoji" do
   command "sudo /usr/share/elasticsearch/bin/plugin install analysis-kuromoji"
+  notifies :restart, "service[elasticsearch]"
   not_if "test -e /usr/share/elasticsearch/plugins/analysis-kuromoji"
 end
 
 execute "plugin install kopf" do
   command "sudo /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/v2.1.2"
+  notifies :restart, "service[elasticsearch]"
   not_if "test -e /usr/share/elasticsearch/plugins/kopf"
 end
