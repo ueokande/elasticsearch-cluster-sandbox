@@ -70,7 +70,7 @@ network.publish_host: _enp0s8:ipv4_
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
 # discovery.zen.ping.unicast.hosts: ["host1", "host2"]
-discovery.zen.ping.unicast.hosts: [ 192.168.0.101, 192.168.0.102 ]
+discovery.zen.ping.unicast.hosts: [ 192.168.0.101, 192.168.0.102, 192.168.0.103, 192.168.0.104 ]
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of nodes / 2 + 1):
 #
