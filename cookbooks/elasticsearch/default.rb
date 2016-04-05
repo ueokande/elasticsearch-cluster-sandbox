@@ -34,3 +34,9 @@ execute "plugin install kopf" do
   notifies :restart, "service[elasticsearch]"
   not_if "test -e /usr/share/elasticsearch/plugins/kopf"
 end
+
+execute "plugin install head" do
+  command "sudo /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head"
+  notifies :restart, "service[elasticsearch]"
+  not_if "test -e /usr/share/elasticsearch/plugins/head"
+end
